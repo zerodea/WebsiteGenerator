@@ -92,6 +92,11 @@ class WebsiteGenerator(private val initialDirectory: File, private val outputDir
                         
                     """.trimIndent()
                         )
+                    } else if (line.startsWith("[")) {
+                        val text = line.drop(1).takeWhile { it != ']' }
+                        val link = line.dropWhile { it != ']' }.drop(1).takeWhile { it != ')' }
+                        out.write("""<a href="$link">$text</a>""")
+                        out.write("\n")
                     } else {
                         // This is an actual line of text
                         out.write("$line\n")
@@ -195,6 +200,7 @@ class WebsiteGenerator(private val initialDirectory: File, private val outputDir
     }
 
     private fun String.sanitizeFolderName(): String {
-        return split("_").joinToString(" ") { replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } }.trim()
+        return split("_").joinToString(" ") { replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } }
+            .trim()
     }
 }
