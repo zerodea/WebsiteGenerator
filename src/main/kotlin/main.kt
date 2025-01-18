@@ -20,7 +20,6 @@ class WebsiteGenerator(private val initialDirectory: File, private val outputDir
         }
         folder
             .listFiles()
-            // ?.filter { it.isDirectory || it.extension == "zd" }
             ?.forEach { file ->
                 if (file.isDirectory) {
                     handleFolder(file)
