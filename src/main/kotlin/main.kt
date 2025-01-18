@@ -31,11 +31,6 @@ class WebsiteGenerator(private val initialDirectory: File, private val outputDir
             }
     }
 
-    private fun copyFile(file: File) {
-        val outputFile = File("${outputDirectory.path}${file.relativePath()}")
-        file.copyTo(outputFile, overwrite = true)
-    }
-
     private fun handleFile(file: File) {
         val outputFile = File("${outputDirectory.path}${file.relativePath().removeSuffix(".zd")}.html")
         outputFile.bufferedWriter().use { out ->
@@ -184,6 +179,11 @@ class WebsiteGenerator(private val initialDirectory: File, private val outputDir
         
         """.trimIndent()
         )
+    }
+
+    private fun copyFile(file: File) {
+        val outputFile = File("${outputDirectory.path}${file.relativePath()}")
+        file.copyTo(outputFile, overwrite = true)
     }
 
     private fun File.relativePath(): String {
