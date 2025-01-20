@@ -169,10 +169,8 @@ class WebsiteGenerator(private val initialDirectory: File, private val outputDir
         <footer class="footer">
             <nav>
                 <ul>
-                    <li><a target="_blank" href="https://www.twitch.com"><img src="/images/twitch.svg" alt="My Twitch Channel"/></a></li>
-                    <li><a target="_blank" href="https://www.youtube.com"><img src="/images/youtube.png" alt="My Youtube Channel"/></a></li>
-                    <li><a target="_blank" href="https://www.reddit.com"><img src="/images/reddit.svg" alt="My Reddit Account"/></a></li>
-                    <li><a target="_blank" href="https://www.twitter.com"><img src="/images/twitter.svg" alt="My Twitter Account"/></a></li>
+                    <li><a target="_blank" href="https://www.twitch.com/zero0dea"><img src="/images/twitch.svg" alt="My Twitch Channel"/></a></li>
+                    <li><a target="_blank" href="https://www.github.com/zerodea"><img src="/images/github.svg" alt="My Github Profile"/></a></li>
                 </ul>
             </nav>
         </footer>
